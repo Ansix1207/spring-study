@@ -4,4 +4,5 @@ import java.io.InputStream;
 
 public interface ArgumentResolver {
     public Argument resolve(InputStream stream);
+    //intelliJ git commit Test
 }
