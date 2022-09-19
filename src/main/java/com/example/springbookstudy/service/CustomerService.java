@@ -12,12 +12,23 @@ public class CustomerService {
     @Autowired
     CustomerRepository customerRepository;
 
-    public Customer save(Customer customer) {
+    public List<Customer> findAll(){
+        return customerRepository.findAllOrderByName();
+    }
+
+    public Customer findOne(Integer id){
+        return customerRepository.findById(id).get();
+    }
+
+    public Customer create(Customer customer){
         return customerRepository.save(customer);
     }
-    public List<Customer> findAll(){
-        return customerRepository.findAll();
-    }
-    //그 외의 메서드 3장에서 정의
 
+    public Customer update(Customer customer){
+       return  customerRepository.save(customer);
+    }
+
+    public void delete(Integer id){
+        customerRepository.deleteById(id);
+    }
 }
