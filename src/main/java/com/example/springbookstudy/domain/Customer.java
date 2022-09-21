@@ -8,16 +8,16 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "customers")
+@Table(name = "CUSTOMERS")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class  Customer {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(nullable=false)
+    @Column(nullable=false,name ="FIRST_NAME")
     private String firstName;
-    @Column(nullable=false)
+    @Column(nullable=false,name = "LAST_NAME")
     private String lastName;
 }
