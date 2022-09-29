@@ -3,11 +3,15 @@ package com.example.springbookstudy.service;
 import com.example.springbookstudy.domain.Customer;
 import com.example.springbookstudy.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class CustomerService {
     @Autowired
     CustomerRepository customerRepository;
